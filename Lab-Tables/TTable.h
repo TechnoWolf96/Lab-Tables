@@ -23,10 +23,9 @@ public:
 	int GetDataCount() const {return dataCount;}
 	int GetEfficiency() const { return efficiency; }
 	void ClearEfficiency() { efficiency = 0; }
-
-
-
 	bool IsEmpty() { return dataCount == 0; }
+
+
 	virtual bool IsFull() const = 0;
 
 	virtual bool Find(TKey) = 0;

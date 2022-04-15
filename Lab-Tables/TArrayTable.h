@@ -1,7 +1,7 @@
 #pragma once
 #include "TTable.h"
 
-class TArrayTable : TTable
+class TArrayTable : public TTable
 {
 protected:
 	TRecord* arr;
@@ -9,9 +9,16 @@ protected:
 public:
 	TArrayTable(int size = 10);
 	~TArrayTable() { delete arr; }
+
+	bool IsFull() const override { return dataCount == size; }
+
 	void GoNext() override { currentPos++; }
 	void Reset() override { currentPos = 0; }
-	bool IsEnd() override {size == dataCount;}
+	bool IsEnd() override { currentPos == dataCount;}
+
+	TRecord GetCurrentRecord() override { return arr[currentPos]; }
+
+	
 
 
 };
