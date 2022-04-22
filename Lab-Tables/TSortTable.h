@@ -24,6 +24,23 @@ public:
 
 };
 
+inline void TSortTable::SelectionSort()
+{
+	if (IsEmpty()) return;
+
+	TRecord min = arr[0];
+	for (int i = 0; i < dataCount; i++)
+	{
+		for (int j = i; j < dataCount; j++)
+		{
+			if (min.key > arr[j].key) min = arr[j];
+			efficiency++;
+		}
+		arr[i] = min;
+		efficiency++;
+	}
+}
+
 inline void TSortTable::QuickSort(int first, int last)
 {
 	TKey mid = arr[(first + last) / 2].key;
@@ -38,7 +55,6 @@ inline void TSortTable::QuickSort(int first, int last)
 			arr[leftPos] = arr[rightPos];
 			arr[rightPos] = temp;
 			leftPos++, rightPos++, efficiency++;
-
 		}
 	}
 }
