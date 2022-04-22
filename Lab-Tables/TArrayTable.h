@@ -10,6 +10,7 @@ public:
 	TArrayTable(int size = 10);
 	~TArrayTable() { delete arr; }
 
+	int GetSize() const { return size; }
 	bool IsFull() const override { return dataCount == size; }
 
 	void GoNext() override { currentPos++; }
@@ -17,6 +18,7 @@ public:
 	bool IsEnd() override { currentPos == dataCount;}
 
 	TRecord GetCurrentRecord() override { return arr[currentPos]; }
+	void SetCurrentRecord(TRecord record) override { arr[currentPos] = record; }
 
 	
 

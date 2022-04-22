@@ -9,6 +9,12 @@ struct TRecord
 {
 	TKey key;
 	TValue value;
+
+	TRecord& operator=(const TRecord& other)
+	{
+		key = other.key;
+		value = other.value;
+	}
 };
 
 
@@ -36,6 +42,7 @@ public:
 	virtual void Reset() = 0;
 	virtual bool IsEnd() = 0;
 	virtual TRecord GetCurrentRecord() = 0;
+	virtual void SetCurrentRecord(TRecord record) = 0;
 
 };
 

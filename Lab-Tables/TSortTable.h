@@ -1,16 +1,56 @@
 #pragma once
 #include "TScanTable.h"
 
-class TSortTable : TScanTable
+enum SortType { Selection, Quick };
+
+class TSortTable : public TArrayTable
 {
+private:
+	
+
+	void SelectionSort();
+	void QuickSort(int first, int last);
+
+
+
 public:
+
+	TSortTable(TArrayTable& table, SortType sortType);
 
 	bool Find(TKey key) override;
 	bool Insert(TRecord record) override;
 	bool Delete(TKey key) override;
-
 	
+
 };
+
+inline void TSortTable::QuickSort(int first, int last)
+{
+	TKey mid = arr[(first + last) / 2].key;
+	int leftPos = first, rightPos = last;
+	while (leftPos < rightPos)
+	{
+		while (arr[leftPos].key < mid) leftPos++, efficiency++;
+		while (arr[rightPos].key > mid) rightPos++, efficiency++;
+		if (leftPos <= rightPos)
+		{
+			TRecord temp = arr[leftPos];
+			arr[leftPos] = arr[rightPos];
+			arr[rightPos] = temp;
+			leftPos++, rightPos++, efficiency++;
+
+		}
+	}
+}
+
+inline TSortTable::TSortTable(TArrayTable& table, SortType sortType) : TArrayTable(table.GetSize())
+{
+	for (Reset(), table.Reset(); !table.IsEnd(); table.GoNext(), GoNext())
+		SetCurrentRecord(table.GetCurrentRecord());
+	if (sortType == SortType::Quick) QuickSort(0, GetDataCount()-1);
+	if (sortType == SortType::Selection) SelectionSort();
+
+}
 
 bool TSortTable::Find(TKey key)
 {
