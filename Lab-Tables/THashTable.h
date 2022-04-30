@@ -1,9 +1,10 @@
 #pragma once
 #include "TTable.h"
 
-class THashTable
+class THashTable : public TTable
 {
 protected:
+
 	virtual int HashFunc(TKey key) = 0;
 
 };

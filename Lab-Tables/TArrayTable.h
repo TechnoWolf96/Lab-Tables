@@ -8,7 +8,7 @@ protected:
 	int size, currentPos;
 public:
 	TArrayTable(int size = 10);
-	~TArrayTable() { delete arr; }
+	~TArrayTable() { delete[] arr; }
 
 	int GetSize() const { return size; }
 	bool IsFull() const override { return dataCount == size; }
