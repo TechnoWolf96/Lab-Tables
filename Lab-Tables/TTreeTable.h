@@ -1,6 +1,7 @@
 #pragma once
 #include "TTable.h"
 #include <stack>
+#include <iostream>
 
 struct TTreeNode
 {
@@ -26,9 +27,30 @@ class TTreeTable : public TTable
 protected:
 	TTreeNode* pRoot, * pCurrent, * pPrev;
 	std::stack<TTreeNode*> st;
-public:
+	int countPos;
 
+	void DeleteRec(TTreeNode* node)
+	{
+		if (node->pLeft != nullptr) DeleteRec(node->pLeft);
+		if (node->pRight != nullptr) DeleteRec(node->pRight);
+		delete node;
+	}
+	
+	void PrintRec(TTreeNode* node, std::ostream& os, int level)
+	{
+		if (node == nullptr) return;
+		for (int i = 0; i < level; i++) os << " ";
+		os << node->rec.key;
+		level++;
+		PrintRec(node->pRight, os, level);
+		PrintRec(node->pLeft, os, level);
+		level--;
+	}
+
+
+public:
 	TTreeTable();
+	~TTreeTable() { Clear(); }
 	
 	bool IsFull() const override;
 
@@ -36,6 +58,15 @@ public:
 	bool Insert(TRecord rec) override;
 	bool Delete(TKey key) override;
 
+	void Reset() override;
+	void GoNext() override;
+	bool IsEnd() override;
+
+	TRecord GetCurrentRecord() override { return pCurrent->rec; }
+	void SetCurrentRecord(TValue value) override { pCurrent->rec.value = value; }
+
+	void Clear() { DeleteRec(pRoot); }
+	void Print(std::ostream stream) { PrintRec(pRoot, stream, 0); }
 
 };
 
@@ -44,6 +75,7 @@ TTreeTable::TTreeTable() : TTable()
 	pRoot = nullptr;
 	pCurrent = nullptr;
 	pPrev = nullptr;
+	countPos = 0;
 }
 
 
@@ -129,4 +161,34 @@ inline bool TTreeTable::Delete(TKey key)
 	delete pDel;
 	dataCount--;
 	return true;
+}
+
+inline void TTreeTable::Reset()
+{
+	while (!st.empty()) st.pop();
+	pCurrent = pRoot;
+	while (pCurrent != nullptr) st.push(pCurrent);
+	pCurrent = st.top();
+	countPos = 0;
+}
+
+inline void TTreeTable::GoNext()
+{
+	st.pop();
+	if (pCurrent->pRight != nullptr)
+	{
+		pCurrent = pCurrent->pRight;
+		while (pCurrent != nullptr)
+		{
+			st.push(pCurrent);
+			pCurrent = pCurrent->pLeft;
+		}
+		pCurrent = st.top();
+	}
+	else pCurrent = st.top();
+}
+
+inline bool TTreeTable::IsEnd()
+{
+	return countPos == dataCount;
 }

@@ -18,7 +18,7 @@ public:
 	bool IsEnd() override { currentPos == dataCount;}
 
 	TRecord GetCurrentRecord() override { return arr[currentPos]; }
-	void SetCurrentRecord(TRecord record) override { arr[currentPos] = record; }
+	void SetCurrentRecord(TValue value) override { arr[currentPos].value = value; }
 
 	
 

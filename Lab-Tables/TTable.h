@@ -41,8 +41,9 @@ public:
 	virtual void GoNext() = 0;
 	virtual void Reset() = 0;
 	virtual bool IsEnd() = 0;
+
 	virtual TRecord GetCurrentRecord() = 0;
-	virtual void SetCurrentRecord(TRecord record) = 0;
+	virtual void SetCurrentRecord(TValue record) = 0;
 
 };
 

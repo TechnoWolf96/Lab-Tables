@@ -25,7 +25,7 @@ public:
 	bool Delete(TKey key) override;
 
 	TRecord GetCurrentRecord() override { return *currentIter; }
-	void SetCurrentRecord(TRecord record) override { *currentIter = record; }
+	void SetCurrentRecord(TValue value) override;
 };
 
 TListHash::TListHash(int size)
@@ -92,4 +92,11 @@ inline bool TListHash::Delete(TKey key)
 	if (!Find(key)) return false;
 	arr[currentPos].erase(currentIter);
 	return true;
+}
+
+inline void TListHash::SetCurrentRecord(TValue value)
+{
+	TRecord curRec = *currentIter;
+	curRec.value = value;
+	*currentIter = curRec;
 }
