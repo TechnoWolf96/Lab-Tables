@@ -22,10 +22,10 @@ public:
 
 	void Reset() override;
 	void GoNext() override;
-	bool IsEnd() override { currentPos == size; }
+	bool IsEnd() override { return currentPos == size; }
 
 	TRecord GetCurrentRecord() override { return arr[currentPos]; }
-	void SetCurrentRecord(TRecord record);
+	void SetCurrentRecord(TRecord record) override;
 
 };
 

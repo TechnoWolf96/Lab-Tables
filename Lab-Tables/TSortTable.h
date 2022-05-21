@@ -75,8 +75,8 @@ bool TSortTable::Find(TKey key)
 	{
 		efficiency++;
 		middle = (begin + end) / 2;
-		if (arr[middle].key < key) end = middle - 1;
-		else if (arr[middle].key > key) end = middle + 1;
+		if (arr[middle].key < key) begin = middle + 1;
+		else if (arr[middle].key > key) end = middle - 1;
 		else { currentPos = middle; return true; }
 	}
 	currentPos = begin;

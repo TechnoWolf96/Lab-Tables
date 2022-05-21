@@ -15,17 +15,17 @@ public:
 
 	void GoNext() override { currentPos++; }
 	void Reset() override { currentPos = 0; }
-	bool IsEnd() override { currentPos == dataCount;}
+	bool IsEnd() override { return currentPos == dataCount;}
 
 	TRecord GetCurrentRecord() override { return arr[currentPos]; }
-	void SetCurrentRecord(TValue value) override { arr[currentPos].value = value; }
+	void SetCurrentRecord(TRecord record) override { arr[currentPos] = record; }
 
 	
 
 
 };
 
-TArrayTable::TArrayTable(int size = 10)
+TArrayTable::TArrayTable(int size)
 {
 	this->size = size;
 	arr = new TRecord[size];

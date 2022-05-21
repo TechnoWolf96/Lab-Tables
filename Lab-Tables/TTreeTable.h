@@ -40,7 +40,7 @@ protected:
 	{
 		if (node == nullptr) return;
 		for (int i = 0; i < level; i++) os << " ";
-		os << node->rec.key;
+		os << node->rec.key << '\n';
 		level++;
 		PrintRec(node->pRight, os, level);
 		PrintRec(node->pLeft, os, level);
@@ -63,10 +63,10 @@ public:
 	bool IsEnd() override;
 
 	TRecord GetCurrentRecord() override { return pCurrent->rec; }
-	void SetCurrentRecord(TValue value) override { pCurrent->rec.value = value; }
+	void SetCurrentRecord(TRecord record) override { Delete(pCurrent->rec.key); Insert(record); }
 
 	void Clear() { DeleteRec(pRoot); }
-	void Print(std::ostream stream) { PrintRec(pRoot, stream, 0); }
+	void Print(std::ostream& stream) { PrintRec(pRoot, stream, 0); }
 
 };
 
@@ -113,8 +113,15 @@ inline bool TTreeTable::Insert(TRecord rec)
 {
 	if (IsFull() || Find(rec.key)) return false;
 	TTreeNode* newNode = new TTreeNode(rec);
+	if (IsEmpty()) 
+	{
+		pRoot = newNode; 
+		dataCount++;
+		return true;
+	}
 	if (rec.key > pCurrent->rec.key) pCurrent->pRight = newNode;
 	else pCurrent->pLeft = newNode;
+	dataCount++;
 	return true;
 }
 
@@ -167,7 +174,11 @@ inline void TTreeTable::Reset()
 {
 	while (!st.empty()) st.pop();
 	pCurrent = pRoot;
-	while (pCurrent != nullptr) st.push(pCurrent);
+	while (pCurrent != nullptr)
+	{
+		st.push(pCurrent);
+		pCurrent = pCurrent->pLeft;
+	}
 	pCurrent = st.top();
 	countPos = 0;
 }
@@ -185,7 +196,9 @@ inline void TTreeTable::GoNext()
 		}
 		pCurrent = st.top();
 	}
-	else pCurrent = st.top();
+	else if (!st.empty()) pCurrent = st.top();
+	countPos++;
+
 }
 
 inline bool TTreeTable::IsEnd()
