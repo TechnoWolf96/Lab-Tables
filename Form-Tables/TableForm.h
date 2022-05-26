@@ -26,7 +26,7 @@ namespace FormTables {
 
 	int startRecordCount = 0;
 	int keyRange = 0;
-	const int tableSize = 1000;
+	int tableSize = 10;
 	const int step = 7;
 
 
@@ -83,40 +83,56 @@ namespace FormTables {
 
 
 	private: System::Windows::Forms::Label^ label3;
+	private: System::Windows::Forms::TextBox^ efficiency_ScanTable;
+	private: System::Windows::Forms::TextBox^ efficiency_InsertSortTable;
+	private: System::Windows::Forms::TextBox^ efficiency_QuickSortTable;
+	private: System::Windows::Forms::TextBox^ efficiency_ArrayHashTable;
+	private: System::Windows::Forms::TextBox^ efficiency_ListHashTable;
+	private: System::Windows::Forms::TextBox^ efficiency_TreeTable;
+	private: System::Windows::Forms::TextBox^ efficiency_BalanceTreeTable;
 
-	private: System::Windows::Forms::TextBox^ textBox3;
-	private: System::Windows::Forms::TextBox^ textBox4;
-	private: System::Windows::Forms::TextBox^ textBox5;
-	private: System::Windows::Forms::TextBox^ textBox6;
-	private: System::Windows::Forms::TextBox^ textBox7;
-	private: System::Windows::Forms::TextBox^ textBox8;
-	private: System::Windows::Forms::TextBox^ textBox9;
+
+
+
+
+
+
+
 	private: System::Windows::Forms::Label^ label5;
 	private: System::Windows::Forms::Label^ label1;
-	private: System::Windows::Forms::TextBox^ textBox10;
+	private: System::Windows::Forms::TextBox^ findKey_TextBox;
+
 	private: System::Windows::Forms::Label^ label4;
-	private: System::Windows::Forms::Button^ button2;
-	private: System::Windows::Forms::Label^ label6;
+	private: System::Windows::Forms::Button^ search_Button;
+
+
 	private: System::Windows::Forms::TextBox^ recordQuant_TextBox;
 
-	private: System::Windows::Forms::TextBox^ textBox11;
-	private: System::Windows::Forms::TextBox^ textBox12;
-	private: System::Windows::Forms::Label^ label7;
-	private: System::Windows::Forms::Button^ button3;
-	private: System::Windows::Forms::TextBox^ textBox13;
+
+
+
+	private: System::Windows::Forms::Button^ delete_Button;
+
+	private: System::Windows::Forms::TextBox^ deleteKey_TextBox;
+
 	private: System::Windows::Forms::Label^ label8;
-	private: System::Windows::Forms::TextBox^ textBox14;
-	private: System::Windows::Forms::Label^ label9;
-	private: System::Windows::Forms::Button^ button4;
-	private: System::Windows::Forms::TextBox^ textBox15;
+
+
+	private: System::Windows::Forms::Button^ insert_Button;
+
+	private: System::Windows::Forms::TextBox^ insertKey_TextBox;
+
 	private: System::Windows::Forms::Label^ label10;
-	private: System::Windows::Forms::TextBox^ textBox16;
+	private: System::Windows::Forms::TextBox^ insertValue_TextBox;
+
 	private: System::Windows::Forms::Label^ label11;
 	private: System::Windows::Forms::Label^ label12;
 	private: System::Windows::Forms::TextBox^ count_TextBox;
 
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Ключ;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Значение;
+	private: System::Windows::Forms::TextBox^ tableSize_TextBox;
+	private: System::Windows::Forms::Label^ label13;
 
 
 
@@ -154,35 +170,31 @@ namespace FormTables {
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->keyRange_TextBox = (gcnew System::Windows::Forms::TextBox());
 			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox6 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox7 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox8 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox9 = (gcnew System::Windows::Forms::TextBox());
+			this->efficiency_ScanTable = (gcnew System::Windows::Forms::TextBox());
+			this->efficiency_InsertSortTable = (gcnew System::Windows::Forms::TextBox());
+			this->efficiency_QuickSortTable = (gcnew System::Windows::Forms::TextBox());
+			this->efficiency_ArrayHashTable = (gcnew System::Windows::Forms::TextBox());
+			this->efficiency_ListHashTable = (gcnew System::Windows::Forms::TextBox());
+			this->efficiency_TreeTable = (gcnew System::Windows::Forms::TextBox());
+			this->efficiency_BalanceTreeTable = (gcnew System::Windows::Forms::TextBox());
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->textBox10 = (gcnew System::Windows::Forms::TextBox());
+			this->findKey_TextBox = (gcnew System::Windows::Forms::TextBox());
 			this->label4 = (gcnew System::Windows::Forms::Label());
-			this->button2 = (gcnew System::Windows::Forms::Button());
-			this->label6 = (gcnew System::Windows::Forms::Label());
+			this->search_Button = (gcnew System::Windows::Forms::Button());
 			this->recordQuant_TextBox = (gcnew System::Windows::Forms::TextBox());
-			this->textBox11 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox12 = (gcnew System::Windows::Forms::TextBox());
-			this->label7 = (gcnew System::Windows::Forms::Label());
-			this->button3 = (gcnew System::Windows::Forms::Button());
-			this->textBox13 = (gcnew System::Windows::Forms::TextBox());
+			this->delete_Button = (gcnew System::Windows::Forms::Button());
+			this->deleteKey_TextBox = (gcnew System::Windows::Forms::TextBox());
 			this->label8 = (gcnew System::Windows::Forms::Label());
-			this->textBox14 = (gcnew System::Windows::Forms::TextBox());
-			this->label9 = (gcnew System::Windows::Forms::Label());
-			this->button4 = (gcnew System::Windows::Forms::Button());
-			this->textBox15 = (gcnew System::Windows::Forms::TextBox());
+			this->insert_Button = (gcnew System::Windows::Forms::Button());
+			this->insertKey_TextBox = (gcnew System::Windows::Forms::TextBox());
 			this->label10 = (gcnew System::Windows::Forms::Label());
-			this->textBox16 = (gcnew System::Windows::Forms::TextBox());
+			this->insertValue_TextBox = (gcnew System::Windows::Forms::TextBox());
 			this->label11 = (gcnew System::Windows::Forms::Label());
 			this->label12 = (gcnew System::Windows::Forms::Label());
 			this->count_TextBox = (gcnew System::Windows::Forms::TextBox());
+			this->tableSize_TextBox = (gcnew System::Windows::Forms::TextBox());
+			this->label13 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGrid))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -372,7 +384,7 @@ namespace FormTables {
 			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label2->ForeColor = System::Drawing::SystemColors::HotTrack;
-			this->label2->Location = System::Drawing::Point(37, 38);
+			this->label2->Location = System::Drawing::Point(31, 22);
 			this->label2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(246, 34);
@@ -383,12 +395,13 @@ namespace FormTables {
 			// 
 			this->keyRange_TextBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
-			this->keyRange_TextBox->Location = System::Drawing::Point(307, 34);
+			this->keyRange_TextBox->Location = System::Drawing::Point(301, 18);
 			this->keyRange_TextBox->Margin = System::Windows::Forms::Padding(4);
 			this->keyRange_TextBox->Multiline = true;
 			this->keyRange_TextBox->Name = L"keyRange_TextBox";
 			this->keyRange_TextBox->Size = System::Drawing::Size(144, 35);
 			this->keyRange_TextBox->TabIndex = 11;
+			this->keyRange_TextBox->Text = L"100";
 			this->keyRange_TextBox->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
 			// 
 			// label3
@@ -404,103 +417,110 @@ namespace FormTables {
 			this->label3->TabIndex = 12;
 			this->label3->Text = L"Количество записей:";
 			// 
-			// textBox3
+			// efficiency_ScanTable
 			// 
-			this->textBox3->BackColor = System::Drawing::SystemColors::ControlDark;
-			this->textBox3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->textBox3->Location = System::Drawing::Point(1051, 463);
-			this->textBox3->Margin = System::Windows::Forms::Padding(4);
-			this->textBox3->Multiline = true;
-			this->textBox3->Name = L"textBox3";
-			this->textBox3->ReadOnly = true;
-			this->textBox3->Size = System::Drawing::Size(139, 35);
-			this->textBox3->TabIndex = 15;
-			this->textBox3->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			this->efficiency_ScanTable->BackColor = System::Drawing::SystemColors::ControlDark;
+			this->efficiency_ScanTable->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
+			this->efficiency_ScanTable->ForeColor = System::Drawing::SystemColors::InfoText;
+			this->efficiency_ScanTable->Location = System::Drawing::Point(1051, 463);
+			this->efficiency_ScanTable->Margin = System::Windows::Forms::Padding(4);
+			this->efficiency_ScanTable->Multiline = true;
+			this->efficiency_ScanTable->Name = L"efficiency_ScanTable";
+			this->efficiency_ScanTable->ReadOnly = true;
+			this->efficiency_ScanTable->Size = System::Drawing::Size(139, 35);
+			this->efficiency_ScanTable->TabIndex = 15;
+			this->efficiency_ScanTable->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
 			// 
-			// textBox4
+			// efficiency_InsertSortTable
 			// 
-			this->textBox4->BackColor = System::Drawing::SystemColors::ControlDark;
-			this->textBox4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->textBox4->Location = System::Drawing::Point(1051, 500);
-			this->textBox4->Margin = System::Windows::Forms::Padding(4);
-			this->textBox4->Multiline = true;
-			this->textBox4->Name = L"textBox4";
-			this->textBox4->ReadOnly = true;
-			this->textBox4->Size = System::Drawing::Size(139, 35);
-			this->textBox4->TabIndex = 16;
-			this->textBox4->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			this->efficiency_InsertSortTable->BackColor = System::Drawing::SystemColors::ControlDark;
+			this->efficiency_InsertSortTable->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
+			this->efficiency_InsertSortTable->ForeColor = System::Drawing::SystemColors::InfoText;
+			this->efficiency_InsertSortTable->Location = System::Drawing::Point(1051, 500);
+			this->efficiency_InsertSortTable->Margin = System::Windows::Forms::Padding(4);
+			this->efficiency_InsertSortTable->Multiline = true;
+			this->efficiency_InsertSortTable->Name = L"efficiency_InsertSortTable";
+			this->efficiency_InsertSortTable->ReadOnly = true;
+			this->efficiency_InsertSortTable->Size = System::Drawing::Size(139, 35);
+			this->efficiency_InsertSortTable->TabIndex = 16;
+			this->efficiency_InsertSortTable->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
 			// 
-			// textBox5
+			// efficiency_QuickSortTable
 			// 
-			this->textBox5->BackColor = System::Drawing::SystemColors::ControlDark;
-			this->textBox5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->textBox5->Location = System::Drawing::Point(1051, 537);
-			this->textBox5->Margin = System::Windows::Forms::Padding(4);
-			this->textBox5->Multiline = true;
-			this->textBox5->Name = L"textBox5";
-			this->textBox5->ReadOnly = true;
-			this->textBox5->Size = System::Drawing::Size(139, 35);
-			this->textBox5->TabIndex = 17;
-			this->textBox5->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			this->efficiency_QuickSortTable->BackColor = System::Drawing::SystemColors::ControlDark;
+			this->efficiency_QuickSortTable->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
+			this->efficiency_QuickSortTable->ForeColor = System::Drawing::SystemColors::InfoText;
+			this->efficiency_QuickSortTable->Location = System::Drawing::Point(1051, 537);
+			this->efficiency_QuickSortTable->Margin = System::Windows::Forms::Padding(4);
+			this->efficiency_QuickSortTable->Multiline = true;
+			this->efficiency_QuickSortTable->Name = L"efficiency_QuickSortTable";
+			this->efficiency_QuickSortTable->ReadOnly = true;
+			this->efficiency_QuickSortTable->Size = System::Drawing::Size(139, 35);
+			this->efficiency_QuickSortTable->TabIndex = 17;
+			this->efficiency_QuickSortTable->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
 			// 
-			// textBox6
+			// efficiency_ArrayHashTable
 			// 
-			this->textBox6->BackColor = System::Drawing::SystemColors::ControlDark;
-			this->textBox6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->textBox6->Location = System::Drawing::Point(1051, 574);
-			this->textBox6->Margin = System::Windows::Forms::Padding(4);
-			this->textBox6->Multiline = true;
-			this->textBox6->Name = L"textBox6";
-			this->textBox6->ReadOnly = true;
-			this->textBox6->Size = System::Drawing::Size(139, 35);
-			this->textBox6->TabIndex = 18;
-			this->textBox6->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			this->efficiency_ArrayHashTable->BackColor = System::Drawing::SystemColors::ControlDark;
+			this->efficiency_ArrayHashTable->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
+			this->efficiency_ArrayHashTable->ForeColor = System::Drawing::SystemColors::InfoText;
+			this->efficiency_ArrayHashTable->Location = System::Drawing::Point(1051, 574);
+			this->efficiency_ArrayHashTable->Margin = System::Windows::Forms::Padding(4);
+			this->efficiency_ArrayHashTable->Multiline = true;
+			this->efficiency_ArrayHashTable->Name = L"efficiency_ArrayHashTable";
+			this->efficiency_ArrayHashTable->ReadOnly = true;
+			this->efficiency_ArrayHashTable->Size = System::Drawing::Size(139, 35);
+			this->efficiency_ArrayHashTable->TabIndex = 18;
+			this->efficiency_ArrayHashTable->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
 			// 
-			// textBox7
+			// efficiency_ListHashTable
 			// 
-			this->textBox7->BackColor = System::Drawing::SystemColors::ControlDark;
-			this->textBox7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->textBox7->Location = System::Drawing::Point(1051, 610);
-			this->textBox7->Margin = System::Windows::Forms::Padding(4);
-			this->textBox7->Multiline = true;
-			this->textBox7->Name = L"textBox7";
-			this->textBox7->ReadOnly = true;
-			this->textBox7->Size = System::Drawing::Size(139, 35);
-			this->textBox7->TabIndex = 19;
-			this->textBox7->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			this->efficiency_ListHashTable->BackColor = System::Drawing::SystemColors::ControlDark;
+			this->efficiency_ListHashTable->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
+			this->efficiency_ListHashTable->ForeColor = System::Drawing::SystemColors::InfoText;
+			this->efficiency_ListHashTable->Location = System::Drawing::Point(1051, 610);
+			this->efficiency_ListHashTable->Margin = System::Windows::Forms::Padding(4);
+			this->efficiency_ListHashTable->Multiline = true;
+			this->efficiency_ListHashTable->Name = L"efficiency_ListHashTable";
+			this->efficiency_ListHashTable->ReadOnly = true;
+			this->efficiency_ListHashTable->Size = System::Drawing::Size(139, 35);
+			this->efficiency_ListHashTable->TabIndex = 19;
+			this->efficiency_ListHashTable->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
 			// 
-			// textBox8
+			// efficiency_TreeTable
 			// 
-			this->textBox8->BackColor = System::Drawing::SystemColors::ControlDark;
-			this->textBox8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->textBox8->Location = System::Drawing::Point(1051, 647);
-			this->textBox8->Margin = System::Windows::Forms::Padding(4);
-			this->textBox8->Multiline = true;
-			this->textBox8->Name = L"textBox8";
-			this->textBox8->ReadOnly = true;
-			this->textBox8->Size = System::Drawing::Size(139, 35);
-			this->textBox8->TabIndex = 20;
-			this->textBox8->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			this->efficiency_TreeTable->BackColor = System::Drawing::SystemColors::ControlDark;
+			this->efficiency_TreeTable->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
+			this->efficiency_TreeTable->ForeColor = System::Drawing::SystemColors::InfoText;
+			this->efficiency_TreeTable->Location = System::Drawing::Point(1051, 647);
+			this->efficiency_TreeTable->Margin = System::Windows::Forms::Padding(4);
+			this->efficiency_TreeTable->Multiline = true;
+			this->efficiency_TreeTable->Name = L"efficiency_TreeTable";
+			this->efficiency_TreeTable->ReadOnly = true;
+			this->efficiency_TreeTable->Size = System::Drawing::Size(139, 35);
+			this->efficiency_TreeTable->TabIndex = 20;
+			this->efficiency_TreeTable->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
 			// 
-			// textBox9
+			// efficiency_BalanceTreeTable
 			// 
-			this->textBox9->BackColor = System::Drawing::SystemColors::ControlDark;
-			this->textBox9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->textBox9->Location = System::Drawing::Point(1051, 684);
-			this->textBox9->Margin = System::Windows::Forms::Padding(4);
-			this->textBox9->Multiline = true;
-			this->textBox9->Name = L"textBox9";
-			this->textBox9->ReadOnly = true;
-			this->textBox9->Size = System::Drawing::Size(139, 35);
-			this->textBox9->TabIndex = 21;
-			this->textBox9->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			this->efficiency_BalanceTreeTable->BackColor = System::Drawing::SystemColors::ControlDark;
+			this->efficiency_BalanceTreeTable->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
+			this->efficiency_BalanceTreeTable->ForeColor = System::Drawing::SystemColors::InfoText;
+			this->efficiency_BalanceTreeTable->Location = System::Drawing::Point(1051, 684);
+			this->efficiency_BalanceTreeTable->Margin = System::Windows::Forms::Padding(4);
+			this->efficiency_BalanceTreeTable->Multiline = true;
+			this->efficiency_BalanceTreeTable->Name = L"efficiency_BalanceTreeTable";
+			this->efficiency_BalanceTreeTable->ReadOnly = true;
+			this->efficiency_BalanceTreeTable->Size = System::Drawing::Size(139, 35);
+			this->efficiency_BalanceTreeTable->TabIndex = 21;
+			this->efficiency_BalanceTreeTable->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
 			// 
 			// label5
 			// 
@@ -528,17 +548,17 @@ namespace FormTables {
 			this->label1->TabIndex = 23;
 			this->label1->Text = L"Эффективность:";
 			// 
-			// textBox10
+			// findKey_TextBox
 			// 
-			this->textBox10->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->findKey_TextBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->textBox10->Location = System::Drawing::Point(565, 134);
-			this->textBox10->Margin = System::Windows::Forms::Padding(4);
-			this->textBox10->Multiline = true;
-			this->textBox10->Name = L"textBox10";
-			this->textBox10->Size = System::Drawing::Size(116, 35);
-			this->textBox10->TabIndex = 25;
-			this->textBox10->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			this->findKey_TextBox->Location = System::Drawing::Point(623, 132);
+			this->findKey_TextBox->Margin = System::Windows::Forms::Padding(4);
+			this->findKey_TextBox->Multiline = true;
+			this->findKey_TextBox->Name = L"findKey_TextBox";
+			this->findKey_TextBox->Size = System::Drawing::Size(152, 35);
+			this->findKey_TextBox->TabIndex = 25;
+			this->findKey_TextBox->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
 			// 
 			// label4
 			// 
@@ -546,39 +566,27 @@ namespace FormTables {
 			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label4->ForeColor = System::Drawing::SystemColors::HotTrack;
-			this->label4->Location = System::Drawing::Point(469, 134);
+			this->label4->Location = System::Drawing::Point(527, 132);
 			this->label4->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(88, 34);
 			this->label4->TabIndex = 24;
 			this->label4->Text = L"Ключ:";
 			// 
-			// button2
+			// search_Button
 			// 
-			this->button2->BackColor = System::Drawing::Color::CornflowerBlue;
-			this->button2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->search_Button->BackColor = System::Drawing::Color::CornflowerBlue;
+			this->search_Button->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->button2->ForeColor = System::Drawing::SystemColors::HighlightText;
-			this->button2->Location = System::Drawing::Point(712, 128);
-			this->button2->Margin = System::Windows::Forms::Padding(4);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(175, 50);
-			this->button2->TabIndex = 26;
-			this->button2->Text = L"Поиск";
-			this->button2->UseVisualStyleBackColor = false;
-			// 
-			// label6
-			// 
-			this->label6->AutoSize = true;
-			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label6->ForeColor = System::Drawing::SystemColors::HotTrack;
-			this->label6->Location = System::Drawing::Point(915, 138);
-			this->label6->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
-			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(150, 34);
-			this->label6->TabIndex = 27;
-			this->label6->Text = L"Результат:";
+			this->search_Button->ForeColor = System::Drawing::SystemColors::HighlightText;
+			this->search_Button->Location = System::Drawing::Point(814, 124);
+			this->search_Button->Margin = System::Windows::Forms::Padding(4);
+			this->search_Button->Name = L"search_Button";
+			this->search_Button->Size = System::Drawing::Size(214, 50);
+			this->search_Button->TabIndex = 26;
+			this->search_Button->Text = L"Поиск";
+			this->search_Button->UseVisualStyleBackColor = false;
+			this->search_Button->Click += gcnew System::EventHandler(this, &TableForm::search_Button_Click);
 			// 
 			// recordQuant_TextBox
 			// 
@@ -590,76 +598,34 @@ namespace FormTables {
 			this->recordQuant_TextBox->Name = L"recordQuant_TextBox";
 			this->recordQuant_TextBox->Size = System::Drawing::Size(144, 35);
 			this->recordQuant_TextBox->TabIndex = 29;
+			this->recordQuant_TextBox->Text = L"50";
 			this->recordQuant_TextBox->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
 			// 
-			// textBox11
+			// delete_Button
 			// 
-			this->textBox11->BackColor = System::Drawing::SystemColors::ControlDark;
-			this->textBox11->Enabled = false;
-			this->textBox11->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->delete_Button->BackColor = System::Drawing::Color::CornflowerBlue;
+			this->delete_Button->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->textBox11->Location = System::Drawing::Point(1083, 138);
-			this->textBox11->Margin = System::Windows::Forms::Padding(4);
-			this->textBox11->Multiline = true;
-			this->textBox11->Name = L"textBox11";
-			this->textBox11->ReadOnly = true;
-			this->textBox11->Size = System::Drawing::Size(108, 35);
-			this->textBox11->TabIndex = 30;
-			this->textBox11->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			this->delete_Button->ForeColor = System::Drawing::SystemColors::HighlightText;
+			this->delete_Button->Location = System::Drawing::Point(814, 215);
+			this->delete_Button->Margin = System::Windows::Forms::Padding(4);
+			this->delete_Button->Name = L"delete_Button";
+			this->delete_Button->Size = System::Drawing::Size(214, 50);
+			this->delete_Button->TabIndex = 33;
+			this->delete_Button->Text = L"Удалить";
+			this->delete_Button->UseVisualStyleBackColor = false;
 			// 
-			// textBox12
+			// deleteKey_TextBox
 			// 
-			this->textBox12->BackColor = System::Drawing::SystemColors::ControlDark;
-			this->textBox12->Enabled = false;
-			this->textBox12->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->textBox12->Location = System::Drawing::Point(1083, 229);
-			this->textBox12->Margin = System::Windows::Forms::Padding(4);
-			this->textBox12->Multiline = true;
-			this->textBox12->Name = L"textBox12";
-			this->textBox12->ReadOnly = true;
-			this->textBox12->Size = System::Drawing::Size(108, 35);
-			this->textBox12->TabIndex = 35;
-			this->textBox12->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
-			// 
-			// label7
-			// 
-			this->label7->AutoSize = true;
-			this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label7->ForeColor = System::Drawing::SystemColors::HotTrack;
-			this->label7->Location = System::Drawing::Point(915, 229);
-			this->label7->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
-			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(150, 34);
-			this->label7->TabIndex = 34;
-			this->label7->Text = L"Результат:";
-			// 
-			// button3
-			// 
-			this->button3->BackColor = System::Drawing::Color::CornflowerBlue;
-			this->button3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->button3->ForeColor = System::Drawing::SystemColors::HighlightText;
-			this->button3->Location = System::Drawing::Point(712, 219);
-			this->button3->Margin = System::Windows::Forms::Padding(4);
-			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(175, 50);
-			this->button3->TabIndex = 33;
-			this->button3->Text = L"Удалить";
-			this->button3->UseVisualStyleBackColor = false;
-			// 
-			// textBox13
-			// 
-			this->textBox13->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->textBox13->Location = System::Drawing::Point(565, 225);
-			this->textBox13->Margin = System::Windows::Forms::Padding(4);
-			this->textBox13->Multiline = true;
-			this->textBox13->Name = L"textBox13";
-			this->textBox13->Size = System::Drawing::Size(116, 35);
-			this->textBox13->TabIndex = 32;
-			this->textBox13->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			this->deleteKey_TextBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
+			this->deleteKey_TextBox->Location = System::Drawing::Point(623, 223);
+			this->deleteKey_TextBox->Margin = System::Windows::Forms::Padding(4);
+			this->deleteKey_TextBox->Multiline = true;
+			this->deleteKey_TextBox->Name = L"deleteKey_TextBox";
+			this->deleteKey_TextBox->Size = System::Drawing::Size(152, 35);
+			this->deleteKey_TextBox->TabIndex = 32;
+			this->deleteKey_TextBox->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
 			// 
 			// label8
 			// 
@@ -667,66 +633,38 @@ namespace FormTables {
 			this->label8->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label8->ForeColor = System::Drawing::SystemColors::HotTrack;
-			this->label8->Location = System::Drawing::Point(469, 222);
+			this->label8->Location = System::Drawing::Point(527, 220);
 			this->label8->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label8->Name = L"label8";
 			this->label8->Size = System::Drawing::Size(88, 34);
 			this->label8->TabIndex = 31;
 			this->label8->Text = L"Ключ:";
 			// 
-			// textBox14
+			// insert_Button
 			// 
-			this->textBox14->BackColor = System::Drawing::SystemColors::ControlDark;
-			this->textBox14->Enabled = false;
-			this->textBox14->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->insert_Button->BackColor = System::Drawing::Color::CornflowerBlue;
+			this->insert_Button->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->textBox14->Location = System::Drawing::Point(1083, 322);
-			this->textBox14->Margin = System::Windows::Forms::Padding(4);
-			this->textBox14->Multiline = true;
-			this->textBox14->Name = L"textBox14";
-			this->textBox14->ReadOnly = true;
-			this->textBox14->Size = System::Drawing::Size(108, 35);
-			this->textBox14->TabIndex = 40;
-			this->textBox14->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			this->insert_Button->ForeColor = System::Drawing::SystemColors::HighlightText;
+			this->insert_Button->Location = System::Drawing::Point(814, 309);
+			this->insert_Button->Margin = System::Windows::Forms::Padding(4);
+			this->insert_Button->Name = L"insert_Button";
+			this->insert_Button->Size = System::Drawing::Size(214, 50);
+			this->insert_Button->TabIndex = 38;
+			this->insert_Button->Text = L"Добавить";
+			this->insert_Button->UseVisualStyleBackColor = false;
 			// 
-			// label9
+			// insertKey_TextBox
 			// 
-			this->label9->AutoSize = true;
-			this->label9->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label9->ForeColor = System::Drawing::SystemColors::HotTrack;
-			this->label9->Location = System::Drawing::Point(915, 322);
-			this->label9->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
-			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(150, 34);
-			this->label9->TabIndex = 39;
-			this->label9->Text = L"Результат:";
-			// 
-			// button4
-			// 
-			this->button4->BackColor = System::Drawing::Color::CornflowerBlue;
-			this->button4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->button4->ForeColor = System::Drawing::SystemColors::HighlightText;
-			this->button4->Location = System::Drawing::Point(712, 313);
-			this->button4->Margin = System::Windows::Forms::Padding(4);
-			this->button4->Name = L"button4";
-			this->button4->Size = System::Drawing::Size(175, 50);
-			this->button4->TabIndex = 38;
-			this->button4->Text = L"Добавить";
-			this->button4->UseVisualStyleBackColor = false;
-			// 
-			// textBox15
-			// 
-			this->textBox15->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->textBox15->Location = System::Drawing::Point(565, 298);
-			this->textBox15->Margin = System::Windows::Forms::Padding(4);
-			this->textBox15->Multiline = true;
-			this->textBox15->Name = L"textBox15";
-			this->textBox15->Size = System::Drawing::Size(116, 35);
-			this->textBox15->TabIndex = 37;
-			this->textBox15->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			this->insertKey_TextBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
+			this->insertKey_TextBox->Location = System::Drawing::Point(623, 296);
+			this->insertKey_TextBox->Margin = System::Windows::Forms::Padding(4);
+			this->insertKey_TextBox->Multiline = true;
+			this->insertKey_TextBox->Name = L"insertKey_TextBox";
+			this->insertKey_TextBox->Size = System::Drawing::Size(152, 35);
+			this->insertKey_TextBox->TabIndex = 37;
+			this->insertKey_TextBox->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
 			// 
 			// label10
 			// 
@@ -734,24 +672,24 @@ namespace FormTables {
 			this->label10->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label10->ForeColor = System::Drawing::SystemColors::HotTrack;
-			this->label10->Location = System::Drawing::Point(469, 298);
+			this->label10->Location = System::Drawing::Point(527, 296);
 			this->label10->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label10->Name = L"label10";
 			this->label10->Size = System::Drawing::Size(88, 34);
 			this->label10->TabIndex = 36;
 			this->label10->Text = L"Ключ:";
 			// 
-			// textBox16
+			// insertValue_TextBox
 			// 
-			this->textBox16->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->textBox16->Location = System::Drawing::Point(565, 341);
-			this->textBox16->Margin = System::Windows::Forms::Padding(4);
-			this->textBox16->Multiline = true;
-			this->textBox16->Name = L"textBox16";
-			this->textBox16->Size = System::Drawing::Size(116, 35);
-			this->textBox16->TabIndex = 42;
-			this->textBox16->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			this->insertValue_TextBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
+			this->insertValue_TextBox->Location = System::Drawing::Point(623, 339);
+			this->insertValue_TextBox->Margin = System::Windows::Forms::Padding(4);
+			this->insertValue_TextBox->Multiline = true;
+			this->insertValue_TextBox->Name = L"insertValue_TextBox";
+			this->insertValue_TextBox->Size = System::Drawing::Size(152, 35);
+			this->insertValue_TextBox->TabIndex = 42;
+			this->insertValue_TextBox->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
 			// 
 			// label11
 			// 
@@ -759,7 +697,7 @@ namespace FormTables {
 			this->label11->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label11->ForeColor = System::Drawing::SystemColors::HotTrack;
-			this->label11->Location = System::Drawing::Point(415, 341);
+			this->label11->Location = System::Drawing::Point(473, 339);
 			this->label11->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label11->Name = L"label11";
 			this->label11->Size = System::Drawing::Size(142, 34);
@@ -793,40 +731,62 @@ namespace FormTables {
 			this->count_TextBox->TabIndex = 44;
 			this->count_TextBox->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
 			// 
+			// tableSize_TextBox
+			// 
+			this->tableSize_TextBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
+			this->tableSize_TextBox->Location = System::Drawing::Point(301, 61);
+			this->tableSize_TextBox->Margin = System::Windows::Forms::Padding(4);
+			this->tableSize_TextBox->Multiline = true;
+			this->tableSize_TextBox->Name = L"tableSize_TextBox";
+			this->tableSize_TextBox->Size = System::Drawing::Size(144, 35);
+			this->tableSize_TextBox->TabIndex = 46;
+			this->tableSize_TextBox->Text = L"100";
+			this->tableSize_TextBox->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			// 
+			// label13
+			// 
+			this->label13->AutoSize = true;
+			this->label13->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label13->ForeColor = System::Drawing::SystemColors::HotTrack;
+			this->label13->Location = System::Drawing::Point(65, 62);
+			this->label13->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label13->Name = L"label13";
+			this->label13->Size = System::Drawing::Size(212, 34);
+			this->label13->TabIndex = 45;
+			this->label13->Text = L"Размер таблиц:";
+			// 
 			// TableForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1269, 761);
+			this->Controls->Add(this->tableSize_TextBox);
+			this->Controls->Add(this->label13);
 			this->Controls->Add(this->count_TextBox);
 			this->Controls->Add(this->label12);
-			this->Controls->Add(this->textBox16);
+			this->Controls->Add(this->insertValue_TextBox);
 			this->Controls->Add(this->label11);
-			this->Controls->Add(this->textBox14);
-			this->Controls->Add(this->label9);
-			this->Controls->Add(this->button4);
-			this->Controls->Add(this->textBox15);
+			this->Controls->Add(this->insert_Button);
+			this->Controls->Add(this->insertKey_TextBox);
 			this->Controls->Add(this->label10);
-			this->Controls->Add(this->textBox12);
-			this->Controls->Add(this->label7);
-			this->Controls->Add(this->button3);
-			this->Controls->Add(this->textBox13);
+			this->Controls->Add(this->delete_Button);
+			this->Controls->Add(this->deleteKey_TextBox);
 			this->Controls->Add(this->label8);
-			this->Controls->Add(this->textBox11);
 			this->Controls->Add(this->recordQuant_TextBox);
-			this->Controls->Add(this->label6);
-			this->Controls->Add(this->button2);
-			this->Controls->Add(this->textBox10);
+			this->Controls->Add(this->search_Button);
+			this->Controls->Add(this->findKey_TextBox);
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->label5);
-			this->Controls->Add(this->textBox9);
-			this->Controls->Add(this->textBox8);
-			this->Controls->Add(this->textBox7);
-			this->Controls->Add(this->textBox6);
-			this->Controls->Add(this->textBox5);
-			this->Controls->Add(this->textBox4);
-			this->Controls->Add(this->textBox3);
+			this->Controls->Add(this->efficiency_BalanceTreeTable);
+			this->Controls->Add(this->efficiency_TreeTable);
+			this->Controls->Add(this->efficiency_ListHashTable);
+			this->Controls->Add(this->efficiency_ArrayHashTable);
+			this->Controls->Add(this->efficiency_QuickSortTable);
+			this->Controls->Add(this->efficiency_InsertSortTable);
+			this->Controls->Add(this->efficiency_ScanTable);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->keyRange_TextBox);
 			this->Controls->Add(this->label2);
@@ -842,6 +802,7 @@ namespace FormTables {
 			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"TableForm";
 			this->Text = L"Таблицы";
+			this->Load += gcnew System::EventHandler(this, &TableForm::TableForm_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGrid))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
@@ -867,15 +828,16 @@ namespace FormTables {
 
 private: System::Void Generate_Button_Click(System::Object^ sender, System::EventArgs^ e) 
 {
-	//try
-	//{
+	try
+	{
 		keyRange = Convert::ToInt32(keyRange_TextBox->Text);
 		startRecordCount = Convert::ToInt32(recordQuant_TextBox->Text);
+		tableSize = Convert::ToInt32(tableSize_TextBox->Text);
 		Start();
 		
 
-	//}
-	//catch (...) {}
+	}
+	catch (...) {}
 }
 
 
@@ -976,6 +938,47 @@ private: System::Void treeTable_RadioButton_CheckedChanged(System::Object^ sende
 {
 	if (treeTable == nullptr) return;
 	ShowDataTable(treeTable);
+}
+private: System::Void TableForm_Load(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void search_Button_Click(System::Object^ sender, System::EventArgs^ e)
+{
+	try
+	{
+		int searchKey = Convert::ToInt32(findKey_TextBox->Text);
+
+		scanTable->ClearEfficiency();
+		if (scanTable->Find(searchKey)) efficiency_ScanTable->BackColor = Color::Green;
+		else efficiency_ScanTable->BackColor = Color::Red;
+		efficiency_ScanTable->Text = scanTable->GetEfficiency().ToString();
+
+		insertSortTable->ClearEfficiency();
+		if (insertSortTable->Find(searchKey)) efficiency_InsertSortTable->BackColor = Color::Green;
+		else efficiency_InsertSortTable->BackColor = Color::Red;
+		efficiency_InsertSortTable->Text = insertSortTable->GetEfficiency().ToString();
+
+		quickSortTable->ClearEfficiency();
+		if (quickSortTable->Find(searchKey)) efficiency_QuickSortTable->BackColor = Color::Green;
+		else efficiency_QuickSortTable->BackColor = Color::Red;
+		efficiency_QuickSortTable->Text = quickSortTable->GetEfficiency().ToString();
+
+		arrayHashTable->ClearEfficiency();
+		if (arrayHashTable->Find(searchKey)) efficiency_ArrayHashTable->BackColor = Color::Green;
+		else efficiency_ArrayHashTable->BackColor = Color::Red;
+		efficiency_ArrayHashTable->Text = arrayHashTable->GetEfficiency().ToString();
+
+		listHashTable->ClearEfficiency();
+		if (listHashTable->Find(searchKey)) efficiency_ListHashTable->BackColor = Color::Green;
+		else efficiency_ListHashTable->BackColor = Color::Red;
+		efficiency_ListHashTable->Text = listHashTable->GetEfficiency().ToString();
+
+		treeTable->ClearEfficiency();
+		if (treeTable->Find(searchKey)) efficiency_TreeTable->BackColor = Color::Green;
+		else efficiency_TreeTable->BackColor = Color::Red;
+		efficiency_TreeTable->Text = treeTable->GetEfficiency().ToString();
+
+	}
+	catch (...) {}
 }
 };
 }

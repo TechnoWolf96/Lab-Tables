@@ -96,13 +96,13 @@ inline bool TArrayHash::Delete(TKey key)
 inline void TArrayHash::Reset()
 {
 	for (currentPos = 0; currentPos < size; currentPos++)
-		if (arr[currentPos].key != deleted.key && arr[currentPos].key != arr[currentPos].key) return;
+		if (arr[currentPos].key != deleted.key && arr[currentPos].key != free.key) return;
 }
 
 inline void TArrayHash::GoNext()
 {
 	for (currentPos++; currentPos < size; currentPos++)
-		if (arr[currentPos].key != deleted.key && arr[currentPos].key != arr[currentPos].key) return;
+		if (arr[currentPos].key != deleted.key && arr[currentPos].key != free.key) return;
 }
 
 inline void TArrayHash::SetCurrentRecord(TRecord record)

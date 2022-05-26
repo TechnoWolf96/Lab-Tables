@@ -1,13 +1,12 @@
 #pragma once
 #include "THashTable.h"
-#include <list>
+#include "TList.h"
 
 class TListHash : public THashTable
 {
 protected:
-	std::list<TRecord> *arr;
-	int size, currentPos;
-	std::list<TRecord>::iterator currentIter;
+	TList<TRecord> *arr;
+	int size, currentListNumber;
 public:
 	TListHash(int size = 10);
 	~TListHash() { delete[] arr; }
@@ -24,26 +23,29 @@ public:
 	bool Insert(TRecord rec) override;
 	bool Delete(TKey key) override;
 
-	TRecord GetCurrentRecord() override { return *currentIter; }
+	TRecord GetCurrentRecord() override { return arr[currentListNumber].GetCurrentItem(); }
 	void SetCurrentRecord(TRecord record) override;
 };
 
 TListHash::TListHash(int size)
 {
 	this->size = size;
-	arr = new std::list<TRecord>[size];
-	currentPos = 0;
+	arr = new TList<TRecord>[size];
+	currentListNumber = 0;
 }
 
 inline void TListHash::GoNext()
 {
-	currentIter++;
-	if (currentIter == arr[currentPos].end())
+	arr[currentListNumber].GoNext();
+	if (arr[currentListNumber].IsEnd())
 	{
-		for (currentPos++; currentPos < size; currentPos++)
+		for (currentListNumber++; currentListNumber < size; currentListNumber++)
 		{
-			if (arr[currentPos].size() != 0)
-				currentIter = arr[currentPos].begin();
+			if (!arr[currentListNumber].IsEmpty())
+			{
+				arr[currentListNumber].Reset();
+				return;
+			}
 		}
 	}
 
@@ -52,28 +54,31 @@ inline void TListHash::GoNext()
 
 inline void TListHash::Reset()
 {
-	if (IsEmpty()) {currentPos = 0; return;}
+	if (IsEmpty()) { currentListNumber = 0; return;}
 	
-	for (currentPos = 0; currentPos < size; currentPos++)
+	for (currentListNumber = 0; currentListNumber < size; currentListNumber++)
 	{
-		if (arr[currentPos].size() != 0)
-			currentIter = arr[currentPos].begin();
+		if (!arr[currentListNumber].IsEmpty())
+		{
+			arr[currentListNumber].Reset();
+			return;
+		}
 	}
 	
 }
 
 inline bool TListHash::IsEnd()
 {
-	return currentPos == size;
+	return currentListNumber == size;
 }
 
 inline bool TListHash::Find(TKey key)
 {
-	currentPos = HashFunc(key);
-	for (currentIter = arr[currentPos].begin(); currentIter != arr[currentPos].end(); currentIter++, currentPos++)
+	currentListNumber = HashFunc(key);
+	for (arr[currentListNumber].Reset(); !arr[currentListNumber].IsEnd(); arr[currentListNumber].GoNext())
 	{
 		efficiency++;
-		TRecord rec = *currentIter;
+		TRecord rec = arr[currentListNumber].GetCurrentItem();
 		if (key == rec.key) return true;
 	}
 	return false;
@@ -83,18 +88,20 @@ inline bool TListHash::Find(TKey key)
 inline bool TListHash::Insert(TRecord rec)
 {
 	if (Find(rec.key)) return false;
-	arr[currentPos].push_back(rec);
+	arr[currentListNumber].InsertCurrent(rec);
+	dataCount++;
 	return true;
 }
 
 inline bool TListHash::Delete(TKey key)
 {
 	if (!Find(key)) return false;
-	arr[currentPos].erase(currentIter);
+	arr[currentListNumber].DeleteCurrent();
+	dataCount--;
 	return true;
 }
 
 inline void TListHash::SetCurrentRecord(TRecord record)
 {
-	*currentIter = record;
+	arr[currentListNumber].SetCurrentItem(record);
 }

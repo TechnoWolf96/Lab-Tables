@@ -1,15 +1,17 @@
 #include "TSortTable.h"
 #include "TTreeTable.h"
+#include "TListHash.h"
+#include "TArrayHash.h"
 #include <iostream>
 using namespace std;
 
 
 int main()
 {
-	TTreeTable* table = new TTreeTable();
+	TListHash* table = new TListHash(2);
 
 
-	for (int i = 0; i < 100; i++)
+	for (int i = 0; i < 199; i++)
 	{
 		TKey key = rand() % (100 + 1);
 		TValue value = "Record";
@@ -17,8 +19,6 @@ int main()
 		table->Insert(newRecord);
 
 	}
-
-	table->Print(cout);
 
 	for (table->Reset(); !table->IsEnd(); table->GoNext())
 	{
