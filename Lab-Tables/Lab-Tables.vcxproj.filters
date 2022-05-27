@@ -41,6 +41,9 @@
     <ClInclude Include="TList.h">
       <Filter>Из ранних проектов</Filter>
     </ClInclude>
+    <ClInclude Include="TBalanceTreeTable.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Test.cpp">

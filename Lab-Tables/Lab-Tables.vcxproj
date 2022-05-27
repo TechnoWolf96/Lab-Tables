@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClInclude Include="TArrayHash.h" />
     <ClInclude Include="TArrayTable.h" />
+    <ClInclude Include="TBalanceTreeTable.h" />
     <ClInclude Include="THashTable.h" />
     <ClInclude Include="TList.h" />
     <ClInclude Include="TListHash.h" />

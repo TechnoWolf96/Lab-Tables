@@ -107,6 +107,6 @@ inline bool TSortTable::Delete(TKey key)
 		efficiency++;
 	}
 	dataCount--;
-	return false;
+	return true;
 }
 

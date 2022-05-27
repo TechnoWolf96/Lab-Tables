@@ -7,17 +7,20 @@ struct TTreeNode
 {
 	TRecord rec;
 	TTreeNode *pLeft, *pRight;
+	int balance;
 
 	TTreeNode(TRecord rec)
 	{
 		this->rec = rec;
 		pLeft = nullptr;
 		pRight = nullptr;
+		balance = 0;
 	}
 	TTreeNode()
 	{
 		pLeft = nullptr;
 		pRight = nullptr;
+		balance = 0;
 	}
 };
 
